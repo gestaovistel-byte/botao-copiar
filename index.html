@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Botão Copiar</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      max-width: 100%;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background: #007bff;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <pre id="codigo">ping 192.168.0.1 -t</pre>
+  <button id="copiar">Copiar</button>
+
+  <script>
+    const btn = document.getElementById("copiar");
+    const codigo = document.getElementById("codigo").innerText;
+
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(codigo);
+        btn.style.background = "#28a745"; // verde
+        btn.textContent = "Copiado!";
+        setTimeout(() => {
+          btn.style.background = "#007bff"; // azul
+          btn.textContent = "Copiar";
+        }, 2000);
+      } catch (err) {
+        alert("Erro ao copiar: " + err);
+      }
+    });
+  </script>
+</body>
+</html>
