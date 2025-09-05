@@ -5,6 +5,15 @@
   <title>Botão Copiar</title>
   <style>
     body { font-family: Arial, sans-serif; }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      max-width: 100%;
+      overflow: auto;
+      white-space: pre-wrap;
+    }
     button {
       padding: 10px 20px;
       border: none;
@@ -18,6 +27,45 @@
   </style>
 </head>
 <body>
+  <pre id="codigo">
+306 SEM CONEXÃO 
+
+PROTOCOLO DO ATENDIMENTO: 
+TELEFONE DO ATENDIMENTO: 
+[]TITULAR   []PARENTESCO E NOME:
+CADASTRO ATUALIZADO: []SIM   []NÃO - MOTIVO:
+------------------------------------------------------------------------------
+>> INFORMAÇÕES SOBRE O ATENDIMENTO
+
+CONEXÃO NO MK: []SIM   []NÃO
+CONEXÃO NO U2000/UNM: []SIM   []NÃO
+POTÊNCIA: 
+LED VERMELHA: []ROTEADOR []ONU []SEM LED VERMELHA []LEDS APAGADAS
+CABOS E TOMADAS CONECTADOS CORRETAMENTE []SIM   []NÃO
+VERIFICADO BOTÃO ON/OFF []SIM []NÃO
+------------------------------------------------------------------------------
+>> PROCEDIMENTOS REALIZADOS
+
+ZERADO MAC []SIM   []NÃO
+REBOOT PELA CENTRAL []SIM   []NÃO
+REBOOT MANUAL []SIM []NÃO
+
+------------------------------------------------------------------------------
+>>INFORMAÇÕES VISITA TÉCNICA
+[]NÃO   []SIM, PREENCHER INFORMAÇÕES ABAIXO;
+CIRCUITO/PROJETO:
+
+CLIENTE TEVE VISITA NOS ÚLTIMOS 30 DIAS?
+[]NÃO TEVE   []SIM, NECESSÁRIO INFORMAR DATA DA ÚLTIMA:
+
+QUEM VAI RECEBER O TÉCNICO: 
+[]TITULAR   []PARENTESCO E NOME: 
+TELEFONE:  
+DIA DISPONÍVEL:
+PERÍODO: [] MANHÃ - 09H ÀS 12H / [] TARDE - 14H ÀS 17H / [] DIA TODO
+------------------------------------------------------------------------------
+OBSERVAÇÕES COMPLEMENTARES: 
+</pre>
   <button id="copiar">Copiar</button>
 
   <script>
