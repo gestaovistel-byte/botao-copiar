@@ -32,11 +32,16 @@
 
   <script>
     const btn = document.getElementById("copiar");
-    const codigo = document.getElementById("codigo").innerText;
+    const codigo = document.getElementById("codigo");
 
-    btn.addEventListener("click", async () => {
+    btn.addEventListener("click", () => {
+      const range = document.createRange();
+      range.selectNode(codigo);
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(range);
+
       try {
-        await navigator.clipboard.writeText(codigo);
+        document.execCommand("copy");
         btn.style.background = "#28a745"; // verde
         btn.textContent = "Copiado!";
         setTimeout(() => {
@@ -46,6 +51,8 @@
       } catch (err) {
         alert("Erro ao copiar: " + err);
       }
+
+      window.getSelection().removeAllRanges();
     });
   </script>
 </body>
